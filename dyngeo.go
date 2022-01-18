@@ -88,6 +88,15 @@ func (dg DynGeo) QueryRadius(input QueryRadiusInput, out interface{}) error {
 	return dg.unmarshallOutput(output, out)
 }
 
+func (dg DynGeo) QueryRadiusNative(input QueryRadiusInput, out interface{})(queryResult []map[string]*dynamodb.AttributeValue, err error) {
+	output, err := dg.queryRadius(input)
+	if err != nil {
+		return queryResult, err
+	}
+
+	return output, dg.unmarshallOutput(output, out)
+}
+
 func (dg DynGeo) QueryRectangle(input QueryRectangleInput, out interface{}) error {
 	output, err := dg.queryRectangle(input)
 	if err != nil {
