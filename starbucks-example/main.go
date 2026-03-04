@@ -11,7 +11,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
-	"github.com/crolly/dyngeo"
+	"github.com/pcittadini/dyngeo"
 	"github.com/gofrs/uuid"
 )
 

@@ -8,11 +8,11 @@ Uses **AWS SDK for Go v2** and supports **pagination** on geospatial queries.
 ## Install
 
 ```
-go get github.com/crolly/dyngeo
+go get github.com/pcittadini/dyngeo
 ```
 
 ```go
-import "github.com/crolly/dyngeo"
+import "github.com/pcittadini/dyngeo"
 ```
 
 ## Usage

@@ -10,7 +10,7 @@ Additionally, the project has no `go.mod` (pre-modules era) and depends on `gith
 
 ## Step 1: Initialize Go Modules
 
-- Run `go mod init github.com/crolly/dyngeo`
+- Run `go mod init github.com/pcittadini/dyngeo`
 - New dependencies:
   - `github.com/aws/aws-sdk-go-v2`
   - `github.com/aws/aws-sdk-go-v2/service/dynamodb`

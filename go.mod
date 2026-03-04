@@ -1,4 +1,4 @@
-module github.com/crolly/dyngeo
+module github.com/pcittadini/dyngeo
 
 go 1.25.0
 

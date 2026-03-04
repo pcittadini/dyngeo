@@ -1,15 +1,15 @@
-module github.com/crolly/dyngeo/starbucks-example
+module github.com/pcittadini/dyngeo/starbucks-example
 
 go 1.25.0
 
-replace github.com/crolly/dyngeo => ../
+replace github.com/pcittadini/dyngeo => ../
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.41.2
 	github.com/aws/aws-sdk-go-v2/config v1.29.6
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.56.0
-	github.com/crolly/dyngeo v0.0.0-00010101000000-000000000000
 	github.com/gofrs/uuid v4.4.0+incompatible
+	github.com/pcittadini/dyngeo v0.0.0-00010101000000-000000000000
 )
 
 require (
