@@ -23,12 +23,14 @@ func newDB(config DynGeoConfig) db {
 
 func (db db) queryGeoHash(ctx context.Context, queryInput dynamodb.QueryInput, hashKey uint64, ghr geoHashRange) ([]*dynamodb.QueryOutput, error) {
 	// Build key condition using expression builder (replaces deprecated KeyConditions)
+	// Pass uint64 directly so expression builder serializes as DynamoDB Number (N),
+	// matching the table schema where hashKey and geohash are Number attributes.
 	hashKeyCond := expression.Key(db.config.HashKeyAttributeName).
-		Equal(expression.Value(strconv.FormatUint(hashKey, 10)))
+		Equal(expression.Value(hashKey))
 	geoHashCond := expression.Key(db.config.GeoHashAttributeName).
 		Between(
-			expression.Value(strconv.FormatUint(ghr.rangeMin, 10)),
-			expression.Value(strconv.FormatUint(ghr.rangeMax, 10)),
+			expression.Value(ghr.rangeMin),
+			expression.Value(ghr.rangeMax),
 		)
 
 	expr, err := expression.NewBuilder().
